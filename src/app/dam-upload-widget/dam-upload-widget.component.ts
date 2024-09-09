@@ -20,7 +20,7 @@ export class DamUploadWidgetComponent {
   imagePath: string = '';
   videoPath: string = '';
   selectedFile: File | null = null;
-  private token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJseWdpYWJhb2tnMjAwMkBnbWFpbC5jb20iLCJpYXQiOjE3MjU4NjE2NDgsImV4cCI6MTcyNTk0ODA0OH0.XOupvCYAlWELLXdoD46KGmRQJ9njZfGIqUAyQIyOIXA'
+  private token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJseWdpYWJhb2tnMjAwMkBnbWFpbC5jb20iLCJpYXQiOjE3MjU4NjIwMzksImV4cCI6MTcyNTk0ODQzOX0.UqZVS41RLPYpgUBWKbZi45mH-cPWXZ__ZROW7b6N6zc'
   private tenantId = "FF6D09DC-F54F-4F11-AFDE-556B2EC1A992";
 
   constructor(private uploadService: UploadService) {
@@ -47,11 +47,4 @@ export class DamUploadWidgetComponent {
     }
   }
 
-  insertImage(imageUrl: string): void {
-    const imgTag = `<img src="${imageUrl}" alt="Image" />`;
-
-    // Insert the image tag at the current cursor position
-    this.content += imgTag;
-    console.log(this.content);
-  }
 }
