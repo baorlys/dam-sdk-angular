@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class UploadService {
   private apiUrl = 'http://10.6.20.87:9001/api/assets';
-  private refreshTokenUrl = 'http://127.0.0.1:9001/api/auth/refresh-token';
+  private refreshTokenUrl = 'http://10.6.20.87:9001/api/auth/refresh-token';
   private token!: string;
   private authRefreshToken!: string;
   private tenantId!: string;
