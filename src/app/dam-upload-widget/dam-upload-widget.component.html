@@ -1,2 +1,11 @@
+<!-- File Input -->
 <input type="file" (change)="onFileChange($event)" />
+
+<!-- Image Display -->
 <img *ngIf="imagePath" [src]="imagePath" alt="Uploaded Image" />
+
+<!-- Video Display -->
+<video *ngIf="videoPath" controls autoplay>
+  <source [src]="videoPath" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
