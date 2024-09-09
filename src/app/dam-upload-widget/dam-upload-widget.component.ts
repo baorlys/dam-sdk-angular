@@ -20,12 +20,14 @@ export class DamUploadWidgetComponent {
   imagePath: string = '';
   videoPath: string = '';
   selectedFile: File | null = null;
-  private token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJseWdpYWJhb2tnMjAwMkBnbWFpbC5jb20iLCJpYXQiOjE3MjU4NjIwMzksImV4cCI6MTcyNTk0ODQzOX0.UqZVS41RLPYpgUBWKbZi45mH-cPWXZ__ZROW7b6N6zc'
-  private tenantId = "FF6D09DC-F54F-4F11-AFDE-556B2EC1A992";
+  private token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YWlkYW5nQGdtYWlsLmNvbSIsImlhdCI6MTcyNTg3MzMxNSwiZXhwIjoxNzI1OTU5NzE1fQ.Z2K-pNZDthPJEra0zkuZ4f1-Fh4sPPC6fq9ko0B6AAg'
+  private tenantId = "ec601bd9-9dc0-427c-b46e-3dce7d692a11";
+  private authRefreshToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YWlkYW5nQGdtYWlsLmNvbSIsImV4cCI6MTcyODQ2NTMxNX0.2WyXeJNF-9Bd5WYd-jBwwezUmDxUQJ0G0ycURqnVRGA'
 
   constructor(private uploadService: UploadService) {
     this.uploadService.setToken(this.token);
     this.uploadService.setTenantId(this.tenantId);
+    this.uploadService.setRefreshToken(this.authRefreshToken);
   }
 
   onFileChange(event: any): void {
@@ -47,4 +49,7 @@ export class DamUploadWidgetComponent {
     }
   }
 
+  refreshToken() {
+    this.uploadService.refreshToken();
+  }
 }

@@ -7,7 +7,9 @@ import {Observable} from "rxjs";
 })
 export class UploadService {
   private apiUrl = 'http://10.6.20.87:9001/api/assets';
+  private refreshTokenUrl = 'http://127.0.0.1:9001/api/auth/refresh-token';
   private token!: string;
+  private authRefreshToken!: string;
   private tenantId!: string;
 
   constructor(private http: HttpClient) { }
@@ -16,8 +18,27 @@ export class UploadService {
     this.token = token;
   }
 
+  setRefreshToken(refreshToken: string): void {
+    this.authRefreshToken = refreshToken
+  }
+
   setTenantId(tenantId: string): void {
     this.tenantId = tenantId;
+  }
+
+  refreshToken(): void {
+    if (!this.authRefreshToken) {
+      throw new Error('Refresh token must be set before refreshing the token.');
+    }
+
+    this.http.get(this.refreshTokenUrl, {
+      params: { refreshToken: this.authRefreshToken }
+    })
+      .subscribe(response => {
+      // @ts-ignore
+      const token = response.accessToken;
+      this.setToken(token);
+    });
   }
 
   uploadFile(file: File): Observable<any> {
