@@ -20,7 +20,7 @@ export class DamUploadWidgetComponent {
   imagePath: string = '';
   videoPath: string = '';
   selectedFile: File | null = null;
-  private token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJseWdpYWJhb2tnMjAwMkBnbWFpbC5jb20iLCJpYXQiOjE3MjU4NDkyNjYsImV4cCI6MTcyNTkzNTY2Nn0.SbaRwh6XExLeeZJ_ZHvijXc_G1X-qqhH2fBcNaGvn9A"
+  private token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJseWdpYWJhb2tnMjAwMkBnbWFpbC5jb20iLCJpYXQiOjE3MjU4NTcyNDgsImV4cCI6MTcyNTk0MzY0OH0.qRNLhHAwQNRv03i_6lnNkGl-RDHE7X5LnrgmCiJja-Q'
   private tenantId = "FF6D09DC-F54F-4F11-AFDE-556B2EC1A992";
 
   constructor(private uploadService: UploadService) {
