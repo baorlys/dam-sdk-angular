@@ -20,9 +20,9 @@ export class DamUploadWidgetComponent {
   imagePath: string = '';
   videoPath: string = '';
   selectedFile: File | null = null;
-  private token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YWlkYW5nQGdtYWlsLmNvbSIsImlhdCI6MTcyNTg3MzMxNSwiZXhwIjoxNzI1OTU5NzE1fQ.Z2K-pNZDthPJEra0zkuZ4f1-Fh4sPPC6fq9ko0B6AAg'
+  private token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YWlkYW5nQGdtYWlsLmNvbSIsImlhdCI6MTcyNTkzNjQxOCwiZXhwIjoxNzI2MDIyODE4fQ.hm6Or9gXKXE6m6rlQaAOO1Guc_jO74UOkRiHGTaVMac'
   private tenantId = "ec601bd9-9dc0-427c-b46e-3dce7d692a11";
-  private authRefreshToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YWlkYW5nQGdtYWlsLmNvbSIsImV4cCI6MTcyODQ2NTMxNX0.2WyXeJNF-9Bd5WYd-jBwwezUmDxUQJ0G0ycURqnVRGA'
+  private authRefreshToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YWlkYW5nQGdtYWlsLmNvbSIsImV4cCI6MTcyODUyODQxOH0.tAIT3uHOV_kONhkrdJ7OXZJf5EtdgpCL3LHIlactSwg'
 
   constructor(private uploadService: UploadService) {
     this.uploadService.setToken(this.token);
