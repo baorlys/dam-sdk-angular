@@ -19,10 +19,16 @@ export class DamUploadWidgetComponent {
   content: string = '';
   imagePath: string = '';
   videoPath: string = '';
+  documentName: string = ''
+  documentPath: string = ''
   selectedFile: File | null = null;
-  private token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YWlkYW5nQGdtYWlsLmNvbSIsImlhdCI6MTcyNTkzNjQxOCwiZXhwIjoxNzI2MDIyODE4fQ.hm6Or9gXKXE6m6rlQaAOO1Guc_jO74UOkRiHGTaVMac'
+  uploadProgress: number = 0;
+
+
+  private token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YWlkYW5nQGdtYWlsLmNvbSIsImlhdCI6MTcyNjAyMzAwNiwiZXhwIjoxNzI2MTA5NDA2fQ.q6zRsy91_M2Zfy1aTLrz2B9WVOxNhpQ-h3DwyvwscCg'
   private tenantId = "ec601bd9-9dc0-427c-b46e-3dce7d692a11";
-  private authRefreshToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YWlkYW5nQGdtYWlsLmNvbSIsImV4cCI6MTcyODUyODQxOH0.tAIT3uHOV_kONhkrdJ7OXZJf5EtdgpCL3LHIlactSwg'
+  private authRefreshToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YWlkYW5nQGdtYWlsLmNvbSIsImV4cCI6MTcyODYxNTAwNn0.VoZBwR0gmf6FvqHadNvQKkiot-SThLqZKw_AP6roJH8'
+
 
   constructor(private uploadService: UploadService) {
     this.uploadService.setToken(this.token);
@@ -42,6 +48,10 @@ export class DamUploadWidgetComponent {
         } else if (fileType.startsWith('video/')) {
           // Handle video file
           this.videoPath = fileUrl;
+        } else {
+          // Handle other file types
+          this.documentName = file.name;
+          this.documentPath = fileUrl;
         }
       }, error => {
         console.error(error);

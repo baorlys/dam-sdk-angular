@@ -74,7 +74,7 @@ export class UploadService {
     } else if (videoTypes.includes(file.type)) {
       return 'video';
     } else {
-      return 'unknown';
+      return 'document';
     }
   }
 }

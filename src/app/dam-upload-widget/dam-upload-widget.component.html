@@ -1,4 +1,6 @@
 <!-- File Input -->
+<div *ngIf="uploadProgress > 0">Upload Progress: {{ uploadProgress }}%</div>
+
 <input type="file" (change)="onFileChange($event)" />
 
 <!-- Image Display -->
@@ -9,5 +11,9 @@
   <source [src]="videoPath" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
+
+<div *ngIf="documentPath">
+  <a [href]="documentPath" target="_blank">{{documentName}}</a>
+</div>
 
 <button (click)="refreshToken()">refresh token</button>
