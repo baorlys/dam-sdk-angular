@@ -38,6 +38,9 @@ export class UploadService {
       // @ts-ignore
       const token = response.accessToken;
       this.setToken(token);
+      // @ts-ignore
+      const refreshToken = response.refreshToken;
+      this.setRefreshToken(refreshToken);
     });
   }
 
